@@ -1,18 +1,18 @@
 import 'package:bashment_app/constants.dart';
-import 'package:bashment_app/screens/register_page.dart';
+import 'package:bashment_app/screens/login_page.dart';
 import 'package:bashment_app/widgets/custom_btn.dart';
 import 'package:bashment_app/widgets/custom_input.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+   return Scaffold(
       body: SafeArea(
         child: Container(
           width: double.infinity,
@@ -23,12 +23,15 @@ class _LoginPageState extends State<LoginPage> {
                 padding: EdgeInsets.only(
                   top: 24.0,
                 ),
-                child: Text("Welcome,\n Login to your account",
-                textAlign: TextAlign.center,
-                style: Constants.boldHeading,),
+                child: Text("Register an account",
+                  textAlign: TextAlign.center,
+                  style: Constants.boldHeading,),
               ),
               Column(
                 children: [
+                  CustomInput(
+                    hintText: "Name",
+                  ),
                   CustomInput(
                     hintText: "Email",
                   ),
@@ -36,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                     hintText: "Password",
                   ),
                   CustomBtn(
-                    text: "Login",
+                    text: "Register",
                     onPressed: (){
                       print("Clicked Login");
                     },
@@ -46,15 +49,13 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  bottom: 16.0
+                    bottom: 16.0
                 ),
                 child: CustomBtn(
-                  text: "Create Account",
+                  text: "Login",
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context)=> RegisterPage()
-                    ),
-                     );
+                    Navigator.pop(context);
+
                   },
                   outlineBtn: true,
                 ),
