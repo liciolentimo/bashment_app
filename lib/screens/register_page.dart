@@ -10,9 +10,52 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  Future<void> _alertDialogBuilder() async {
+    return showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) {
+          return AlertDialog(
+            title: Text("Error"),
+            content: Container(
+              child: Text("Random error"),
+            ),
+            actions: [
+              FlatButton(
+                child: Text("Close dialog"),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          );
+        }
+    );
+  }
+
+  bool _registerFormLoading = false;
+
+  String _registerName = "";
+  String _registerEmail = "";
+  String _registerPassword = "";
+
+  FocusNode _passwordFocusNode;
+
+  @override
+  void initState() {
+    _passwordFocusNode = FocusNode();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _passwordFocusNode.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: Container(
           width: double.infinity,
@@ -21,7 +64,7 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               Container(
                 padding: EdgeInsets.only(
-                  top: 24.0,
+                  top: 2.0,
                 ),
                 child: Text("Register an account",
                   textAlign: TextAlign.center,
@@ -31,18 +74,36 @@ class _RegisterPageState extends State<RegisterPage> {
                 children: [
                   CustomInput(
                     hintText: "Name",
+                    onChanged: (value){
+                      _registerName = value;
+                    },
                   ),
                   CustomInput(
                     hintText: "Email",
+                    onChanged: (value){
+                      _registerEmail = value;
+                    },
+                    onSubmitted: (value){
+                      _passwordFocusNode.requestFocus();
+                    },
+                    textInputAction: TextInputAction.next,
                   ),
                   CustomInput(
                     hintText: "Password",
+                    onChanged: (value){
+                      _registerPassword = value;
+                    },
+                    focusNode: _passwordFocusNode,
+                    isPasswordField: true,
                   ),
                   CustomBtn(
                     text: "Register",
-                    onPressed: (){
-                      print("Clicked Login");
+                    onPressed: () {
+                      setState(() {
+                        _registerFormLoading = true;
+                      });
                     },
+                    isLoading: _registerFormLoading,
                     outlineBtn: false,
                   )
                 ],
@@ -53,9 +114,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 child: CustomBtn(
                   text: "Login",
-                  onPressed: (){
+                  onPressed: () {
                     Navigator.pop(context);
-
                   },
                   outlineBtn: true,
                 ),
