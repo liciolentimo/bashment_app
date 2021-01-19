@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "857972412635",
+    "firebase_url": "https://restaurants-f22be.firebaseio.com",
+    "project_id": "restaurants-f22be",
+    "storage_bucket": "restaurants-f22be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857972412635:android:86df75c9a71980d923fcfe",
+        "android_client_info": {
+          "package_name": "com.lentimosystems.bashment_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857972412635-9ns6ku9ia2j1b554ead013ef5cfsfj0a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnMfAUrIhwOTbnog6_Dd-pYUMkDYmg5ok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857972412635-9ns6ku9ia2j1b554ead013ef5cfsfj0a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857972412635:android:28c2a5c0a2b7c1da",
+        "android_client_info": {
+          "package_name": "com.lentimosystems.licio.totalrecipes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "857972412635-m6m46cd389gej558hmph5u7e1b56311j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lentimosystems.licio.totalrecipes",
+            "certificate_hash": "f2a960ce1511a879e1261530b704436071115fd0"
+          }
+        },
+        {
+          "client_id": "857972412635-pkrnpdhip97u4r2ccjd27bvuoie9m4fi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lentimosystems.licio.totalrecipes",
+            "certificate_hash": "16f2884f8bbe02b94f0d44f04843d5e028428d7d"
+          }
+        },
+        {
+          "client_id": "857972412635-9ns6ku9ia2j1b554ead013ef5cfsfj0a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnMfAUrIhwOTbnog6_Dd-pYUMkDYmg5ok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "857972412635-9ns6ku9ia2j1b554ead013ef5cfsfj0a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-1595724221273947~4016495466"
+    }
+  ],
+  "configuration_version": "1"
+}
